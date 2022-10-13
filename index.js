@@ -11,34 +11,34 @@ function init() {
             message: "What would you like to do?",
             choices: [
                 {
+                    name: "View all departments",
+                    value: "VIEW_DEPARTMENTS"
+                },
+                {
+                    name: "View all roles",
+                    value: "VIEW_ROLES"
+                },
+                {
                     name: "View all employees",
                     value: "VIEW_EMPLOYEES"
                 },
                 {
-                    name:
-                    value:
-                }
+                    name: "Add a department",
+                    value: "ADD_DEPARTMENT"
+                },
                 {
-                    name:
-                    value:
-                }
+                    name: "Add a role",
+                    value: "ADD_ROLE"
+                },
                 {
-                    name:
-                    value:
-                }
+                    name: "Add an employee",
+                    value: "ADD_EMPLOYEE"
+                },
                 {
-                    name:
-                    value:
-                }
-                {
-                    name:
-                    value:
-                }
-                {
-                    name:
-                    value:
+                    name: "Update an employee",
+                    value: "UPDATE_EMPLOYEE"
                 }
             ]
         }
-    ])
+    ]);
 }
