@@ -37,8 +37,75 @@ function init() {
                 {
                     name: "Update an employee",
                     value: "UPDATE_EMPLOYEE"
+                },
+                {
+                    name: "Quit",
+                    value: "QUIT"
                 }
             ]
         }
-    ]);
+    ])
+        .then((res) => {
+            let choice = res.choice;
+            switch (choice) {
+                case "VIEW_DEPARTMENTS":
+                    viewDepartments();
+                    break;
+                case "VIEW_ROLES":
+                    viewRoles();
+                    break;
+                case "VIEW_EMPLOYEES":
+                    viewEmployees();
+                    break;
+                case "ADD_DEPARTMENT":
+                    addDepartment();
+                    break;
+                case "ADD_ROLE":
+                    addRole();
+                    break;
+                case "ADD_EMPLOYEE":
+                    addEmployee();
+                    break;
+                case "UPDATE_EMPLOYEE":
+                    updateEmployee();
+                    break;
+
+                default:
+                    quit();
+            }
+        })
+
+}
+
+function viewDepartments() {
+    
+}
+
+function viewRoles() {
+    
+}
+
+function viewEmployees() {
+    
+}
+
+function addDepartment(department) {
+    
+}
+
+function addRole(role) {
+    
+}
+
+function addEmployee(employee) {
+    
+}
+
+function updateEmployee(employeeId) {
+    
+}
+
+function quit() {
+    console.log("You're done!");
+    process.exit();
 }
