@@ -1,5 +1,6 @@
 const { prompt } = require("inquirer");
 const db = require("./db");
+const { listenerCount } = require("./db/connection");
 require("console.table");
 
 init();
@@ -78,23 +79,60 @@ function init() {
 }
 
 function viewDepartments() {
-    
+    db.showDepartments();
 }
 
 function viewRoles() {
-    
+    db.showRoles();
 }
 
 function viewEmployees() {
-    
+    db.showEmployees();
 }
 
 function addDepartment(department) {
-    
+    prompt([
+        {
+            name: "name",
+            message: "What is the name of the department?"
+        }
+    ]).then(res => {
+        let departmentName = res.name;
+        db.createDepartment()
+    });
 }
 
 function addRole(role) {
-    
+    prompt([
+        {
+            name: "title",
+            message: "What is the role title?"
+        },
+        {
+            name: "salary",
+            message: "What is the salary for this role?"
+        }
+    ]).then(res => {
+        let roleTitle = res.title;
+        let roleSalary = res.salary;
+        db.createRole()
+    });
+    prompt({
+        type: "list",
+        name: "departmentId",
+        message: "What department does this role belong to?",
+        choices: departmentChoices
+    })
+    .then(res => {
+        let departmentId = res.departmentId;
+        db.showDepartments()
+        .then(([rows]) => {
+            let roles = rows;
+                    const departmentChoices = department.map(({id, name}) => ({
+                        name: `${name}`,
+                        value: id
+        }))
+    });
 }
 
 function addEmployee() {
